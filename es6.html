@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.js"></script>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <script>
+            //<script type="text/babel">
+            // let a=12;
+            // a=5;
+            // alert(a)  
+            // const b=12;
+            // b=5;
+            // alert(b) 
+            // 块级作用域 
+            // if(true){
+            //     let a=55;
+            // }
+            // alert(a)
+            // var aBtn=document.getElementsByTagName('input');
+            // for(let i=0;i<aBtn.length;i++){
+            //     aBtn[i].onclick=function (){
+            //         alert(i)
+            //     }
+            // }
+            // 箭头函数
+            // 1：如果只有一个参数 ()可以省略；
+            // 2：如果只有一个return，{}可以省略；
+            // function show(){
+
+            // }
+            // let show=(a,b)=>{
+            //     alert(a+b)
+            // }
+            // show(12,5);
+            // window.onload=()=>{
+            //     alert('abc')
+            // }
+            //let arr=[11,22,33,55,88,5]
+            // arr.sort((n1,n2)=>{
+            //     return n1-n2
+            // })
+            // arr.sort((n1,n2)=>n1-n2)
+            // alert(arr)
+            // let show=(a)=>{
+            //     return a*2
+            // }
+            // let show=a=>{
+            //     return a*2
+            // }
+            // let show=(a)=>a*2
+            // alert(show(12))
+            // 展开数组 合并参数
+            // let show=(a,b,...arr,c)=>{
+            //     alert(a);
+            //     alert(b);
+            //     alert(arr);
+            // }
+            // show(12,22,55,66,88)
+            // let arr1 = [1,2,3];
+            // let arr2 = [4,5,6];
+            // let arr = [...arr1,...arr2];
+            // alert(arr)
+            // 解构赋值
+            // let {a,b,c}={a: 12,b: 1,c: 15};
+            // console.log(a,b,c)
+            // let [{a,b},[c1,c2,c3],num,str]=[{a: 12,b: 12},[1,2,3],24,'朱旭旭']
+            // console.log(a,b,c1,c2,c3,num,str)
+            // let [json,arr,num,str]=[{a: 12,b: 12},[1,2,3],24,'朱旭旭']
+            // console.log(json,arr,num,str)
+            // 数组
+            // map 映射
+            // let arr=[1,2,3];
+            // let result=arr.map(item=>item*2)
+            // alert(result)
+            // let arr=[99,99,55];
+            // let result=arr.map(item=>item>=60?'及格':'不及格')
+            // alert(result)
+            // reduce 汇总
+            // let arr=[12,33,98];
+            // let result=arr.reduce(function(tem,item,index){
+            //     if(index!=arr.length-1){
+            //         return tem+item;
+            //     }else{
+            //         return (tem+item)/arr.length;
+            //     }           
+            // })
+            // alert(result)
+            // filter 过滤器
+            // let arr=[55,99,222,33,55]
+            // let result=arr.filter(item=>{
+            //     if(item%3==0){
+            //         return true
+            //     }else{
+            //         return false;
+            //     }          
+            // })
+            // alert(result)
+            // let arr=[55,99,222,33,55]
+            // let result=arr.filter(item=>item%3==0)
+            // alert(result)
+            // let arr=[
+            //     {title:"商品",price:88},
+            //     {title:"商品",price:38},
+            //     {title:"商品",price:68},
+            //     {title:"商品",price:98}
+            // ]
+            // let result=arr.filter(item=>item.price>=60)
+            // alert(result)
+            // forEach 迭代
+            // let arr = [99,88,55,7555,44];
+            // arr.forEach((item,index)=>{
+            //     alert("第"+(index+1)+"个"+":"+item)
+            // })
+            // 字符串
+            // starswith   endswith
+            // let str="git://www.baidu.com";
+            // if(str.startsWith("http://")){
+            //     alert("普通地址")
+            // }else if(str.startsWith("https://")){
+            //     alert("加密地址")
+            // }else if(str.startsWith("git://")){
+            //     alert("git地址")
+            // }else if(str.startsWith("http://")){
+            //     alert("svn地址")
+            // }else{
+            //     alert("其他地址")
+            // }
+            // let str = "1.jpg";
+            // if(str.endsWith('.txt')){
+            //     alert("文本文件")
+            // }else if(str.endsWith('.jpg')){
+            //     alert("图片文件")
+            // }else{
+            //     alert("其他文件")
+            // }
+            // 字符串模板
+            // let a=12;
+            // let str=`a是${a}`
+            // alert(str)
+            // let title="标题";
+            // let content="内容";
+            // let str=`<div>
+            //     <h1>${title}</h1>
+            //     <h2>${content}</h2>
+            // </div>`
+            // 面向对象
+            // class User{
+            //     constructor(name,pass){
+            //         this.name=name;
+            //         this.pass=pass;
+            //     }
+            //     showName(){
+            //         alert(this.name);
+            //     }
+            //     showPass(){
+            //         alert(this.pass);
+            //     }
+            // }
+            // let u1=new User("zhuxuxu","123456");
+            // u1.showName();
+            // u1.showPass();
+            // window.onload=function(){
+            //     class Item extends React.Component{
+            //         constructor(...args){
+            //             super(...args)
+            //         }
+            //         render(){
+            //             return <li>{this.props.str}</li>;
+            //         }
+            //     }
+            //     let oDiv=document.getElementsById('div1');
+            //     ReactDom.render(
+            //         <ul>
+            //             <Item str="aaa"></Item>
+            //             <Item str="bbb"></Item>
+            //         </ul>,
+            //         oDiv
+            //     )
+            // }
+            // JSON
+            // let json={"a":12,"b":5}
+            // alert(JSON.stringify(json))
+            // let str='{"a":12,"b":5,"c":"aaaaa"}'
+            // let json=JSON.parse(str);
+            // console.log(json)
+            // JSON简写
+            // let a=12;
+            // let b=8;
+            // let json={a:a,b:b}
+            // key和velue一样的时候可以只写一个
+            // let json={a,b,c:55}
+            // console.log(json)
+            //打印结果：{a: 12, b: 8, c: 55}
+            // let json={
+            //     a:12,
+            //     show(){
+            //         alert(this.a)
+            //     }
+            // }
+            // json.show()
+            // promise
+            // 用同步一样的方式来书写异步操作
+            // resolve 成功了
+            // reject 失败了
+            // let p1=new Promise(function(resolve,reject){
+            //     $.ajax({
+            //         url:'arr.txt',
+            //         dataType:'json',
+            //         success(arr){
+            //             resolve(arr);
+            //         },
+            //         error(err){
+            //             reject(err);
+            //         }
+            //     })
+            // });
+            // p1.then(function(arr){
+            //     alert('成功了'+arr)
+            // },function(){
+            //     alert('失败了')
+            // });
+            // let p2=new Promise(function(resolve,reject){
+            //     $.ajax({
+            //         url:'json.txt',
+            //         dataType:'json',
+            //         success(arr){
+            //             resolve(arr);
+            //         },
+            //         error(err){
+            //             reject(err);
+            //         }
+            //     })
+            // });
+            // Promise.all([
+            //     p1,p2
+            // ]).then(function(arr){
+            //     let [res1,res2]=arr;
+            //     alert(res1);
+            //     alert(res2);
+            //     alert('全成功了');
+            // },function(){
+            //     alert('至少一个失败了')
+            // });
+            // 封装简化
+            // function creatPromise(url,){
+            //     return new Promise(function(resolve,reject){
+            //         $.ajax({
+            //             url,
+            //             dataType:'json',
+            //             success(arr){
+            //                 resolve(arr);
+            //             },
+            //             error(err){
+            //                 reject(err);
+            //             }
+            //         })
+            //     });
+            //     Promise.all([
+            //         creatPromise('arr.txt'),
+            //         creatPromise('json.txt')
+            //     ]).then(function(arr){
+            //         let [res1,res2]=arr;
+            //         alert(res1);
+            //         alert(res2);
+            //         alert('全成功了');
+            //     },function(){
+            //         alert('至少一个失败了')
+            //     });
+            // }
+            // jquery封装简化promise
+            // Promise.all([
+            //     $.ajax({url:'arr.txt',dataType:'json'}),
+            //     $.ajax({url:'json.txt',dataType:'json'})
+            // ]).then(function(results){
+            //     let [arr,json]=results;
+            //     alert('成功了')
+            //     console.log(arr,json)
+            // },function(){
+            //     alert('失败了')
+            // })
+            // Promise.race
+            // generator 生成器函数
+            // generator实际分解成了两个函数 例如show1() show2();
+            // function *show(){
+            //     alert('a');
+            //     yield
+            //     alert('b');
+            // }
+            // let genObj=show();
+            // genObj.next();>>>>>>走show1()这个函数
+            // genObj.next();>>>>>>走show2()这个函数
+            // yield暂时放弃执行（既可以传参 又可以返回）
+            // yield传参
+            // function *show(num1,num2){
+            //     alert(`${num1},${num2}`)
+            //     alert('a');
+            //     let a=yield; //接收参数
+            //     alert('b');
+            //     alert(a)
+            // }
+            // let gen=show(88,66) //不能直接执行show(),而是生成了一个生成器对象
+            // gen.next(12);   //第一个传不了
+            // gen.next(5);    //next里面可以传参 传的参数会来到yield里面
+            // yield返回
+            // function *show(){
+            //     alert('a');
+            //     yield 99;
+            //     alert('b');
+            //     return 55       //{value: 55, done: true} 最后一步完成了靠return来返回结果
+            // }
+            // let gen=show();
+            // let res1=gen.next();
+            // console.log(res1)           //{value: 99, done: false}          false：没有完成
+            // let res2=gen.next();
+            // console.log(res2)           //{value: undefined, done: true}    true：完成了  undefined：没有参数
+    </script>
+</head>
+
+<body>
+    <!-- <input type="button" value="按钮1">
+    <input type="button" value="按钮2">
+    <input type="button" value="按钮3"> -->
+    <!-- <div id="div1"></div> -->
+</body>
+
+</html>
